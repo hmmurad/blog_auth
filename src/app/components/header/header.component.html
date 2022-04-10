@@ -1,0 +1,18 @@
+<mat-toolbar color="primary" class="flex justify-content-between">
+  <a routerLink="/">Blog</a>
+  <div>
+    <button mat-button routerLink="/" >Home</button>
+    <button *ngIf="!currentUser" mat-button routerLink="/auth/sign-up">Sign Up</button>
+    <button *ngIf="!currentUser"  mat-button routerLink="/auth/sign-in">Sign In</button>
+    <button *ngIf="currentUser" mat-button [matMenuTriggerFor]="menuRef">
+      <mat-icon>person</mat-icon>
+      <span class="ml-2">{{currentUser.fullName ? currentUser.fullName : 'User'}}</span>
+    </button>
+
+    
+    <mat-menu #menuRef="matMenu">
+      <button mat-menu-item (click)="logout()">Logout</button>
+    </mat-menu>
+    
+  </div>
+</mat-toolbar>

@@ -1,0 +1,7 @@
+<div class="grid grid-cols-3 gap-4 mt-3">
+    <div class="border-2 border-gray-300 rounded-md p-4" *ngFor="let post of posts">
+        <h2 class="truncate">{{post.title}}</h2>
+        <p class="indent-8">{{post.body}}</p>
+        <button mat-stroked-button color="primary">Read More</button>
+    </div>
+</div>

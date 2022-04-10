@@ -1,0 +1,19 @@
+
+<div class="w-1/2 min-h-max shadow-lg p-8 my-5 mx-auto rounded-md">
+    <div class="flex justify-center mb-5 text-2xl font-semibold">
+        <span class="">Sign In</span>
+    </div>
+    <form class="" [formGroup]="signInForm" (ngSubmit)="onSignIn()">
+        <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email" required >
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password" required >
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="w-full" type="submit" [disabled]="this.signInForm.invalid">Sign In</button>
+        <span class="text-base mt-4">Don't have an account? <a color="warn" mat-button routerLink="/auth/sign-up"> Sign up</a> here!</span>
+    </form>
+</div>
